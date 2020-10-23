@@ -27,7 +27,7 @@ i18n
           },
           favorites: {
             title: 'My Favorites Places',
-            noPlaces: "You haven't added any places"
+            noPlaces: "You don't have favorite places.. yes:)"
           }
         },
       },
