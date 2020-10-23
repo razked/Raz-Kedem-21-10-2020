@@ -26,7 +26,7 @@ i18n
             }
           },
           favorites: {
-            title: 'My Favorites Places',
+            title: 'My Favorite Places',
             noPlaces: "You don't have favorite places.. yes:)"
           }
         },
