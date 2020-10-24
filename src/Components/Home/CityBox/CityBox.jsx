@@ -5,17 +5,15 @@ import "./CityBox.scss";
 
 const CityBox = (props) => {
   const {
-    city,
-    country,
     WeatherText,
-    WeatherIcon,
     celcius,
     farenheit,
   } = props.data;
 
   const celciusType = useSelector((state) => state.app.celcius);
+  const selectedPlace = useSelector((state) => state.app.selectedPlace);
 
-  let iconSrc = `https://developer.accuweather.com/sites/default/files/${WeatherIcon}-s.png`;
+  // let iconSrc = `https://developer.accuweather.com/sites/default/files/${WeatherIcon}-s.png`;
   let tempature = celciusType ? celcius : farenheit;
   let tempatureType = celciusType ? "c" : "f";
 
@@ -23,8 +21,8 @@ const CityBox = (props) => {
     <div className="CityBox">
       <div className="title">
         <div className="location">
-          <span className="city">{city}</span>
-          <span className="country">{country}</span>
+          <span className="city">{selectedPlace.city}</span>
+          <span className="country">{selectedPlace.country}</span>
         </div>
       </div>
 
@@ -33,9 +31,9 @@ const CityBox = (props) => {
         <span className="temp-type">{tempatureType}</span>
       </div>
 
-      <div className="icon">
+      {/* <div className="icon">
         <img src={iconSrc} alt="icon" />
-      </div>
+      </div> */}
 
       <div className="weather-text">{WeatherText}</div>
     </div>

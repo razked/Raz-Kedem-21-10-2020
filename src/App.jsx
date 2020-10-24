@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
@@ -10,17 +10,45 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./Components/Styles/GlobalStyles";
 import { lightTheme, darkTheme } from "./Components/Styles/Themes";
 import { ToastContainer } from "react-toastify";
+import axios from "axios";
+
+import { handleGeoPermission } from "./helper/userGeoLocation";
+import * as actionTypes from "./store/actions";
 import "react-toastify/dist/ReactToastify.css";
 
 // components
 import Header from "./Containers/Header/Header";
-import Home from './Containers/Home/Home';
-import Favorites from './Containers/Favorites/Favorites';
+import Home from "./Containers/Home/Home";
+import Favorites from "./Containers/Favorites/Favorites";
 
 import "./App.scss";
 
 const App = () => {
+  const dispatch = useDispatch();
   const ThemeLight = useSelector((state) => state.app.themeLight);
+  const selectedPlace = useSelector((state) => state.app.selectedPlace);
+
+  // get user geolocation if available
+  useEffect(() => {
+    if (!selectedPlace) {
+      let userCoordinates = handleGeoPermission();
+
+      if (userCoordinates.length > 0) {
+        getWeatherByUserLocation(userCoordinates);
+      }
+    }
+  }, [selectedPlace]);
+
+  
+  const getWeatherByUserLocation = (cordinates) => {
+    // let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${cordinates[0],cordinates[1]}&toplevel=true`;
+    // axios.get(url).then((res) => {
+    // let id = res.data[0].Key;
+    // let city = res.data[0].EnglishName;
+    // let country = res.data[0].Country.EnglishName;
+    // dispatch({ type: actionTypes.SET_SELECTED_PLACE, val: {id, city, country} });
+    // });
+  };
 
   return (
     <div className="App">
@@ -35,7 +63,12 @@ const App = () => {
             <Redirect to="/" />
           </Switch>
 
-          <ToastContainer hideProgressBar={true} />
+          <ToastContainer
+            hideProgressBar={true}
+            autoClose={4000}
+            position="bottom-right"
+            pauseOnFocusLoss={false}
+          />
         </Router>
       </ThemeProvider>
     </div>

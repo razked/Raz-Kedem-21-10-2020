@@ -22,8 +22,8 @@ const HeaderDiv = styled.header`
 
 const AppTitle = styled.div`
   a {
-    font-size: 3.2rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 600;
     color: ${({ theme }) => theme.text};
     text-decoration: none;
   }

@@ -1,17 +1,25 @@
 .App {
-
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  
+  overflow: auto;
+  min-height: 100vh;
+
   @media (max-width: 900px) {
     padding: 0 1rem;
   }
 
   // tosast alert font size adjesment
   .Toastify__toast-body {
-    font-size: 1.6rem;  
+    font-size: 1.6rem;
+    font-weight: 500;
   }
-  
+
+  .Toastify__toast--success {
+    background-color: #2bae66ff;
+  }
+
+  .Toastify__toast--info {
+  }
 }

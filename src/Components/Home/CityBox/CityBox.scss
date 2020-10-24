@@ -18,7 +18,14 @@ backdrop-filter: blur(5px);
   height: 60%;
   text-align: center;
   color: #222222;
-  //   text-shadow: 1px 1px 3px #7e7e7e;
+
+  @media (max-width: 900px) {
+    width: 70%;
+  }
+  
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 
   .title {
     display: flex;

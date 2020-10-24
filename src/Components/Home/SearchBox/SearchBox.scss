@@ -1,0 +1,12 @@
+.SearchBox {
+    width: 40%;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 640px) {
+        width: 100%;
+      }
+}

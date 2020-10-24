@@ -32,7 +32,7 @@ const ThemeToggleBtn = () => {
 
   const tempatureToggler = () => {
     dispatch({ type: actionTypes.TOGGLE_TEMP });
-    toast(celcius ? t("header.celciusAlert") : t("header.FarenheitAlert"));
+    toast.info(celcius ? t("header.celciusAlert") : t("header.FarenheitAlert"));
   };
 
   const handleTempImg = () => {

@@ -1,0 +1,41 @@
+.option-select {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.option-select-main {
+    max-height: 50vh;
+
+    background-color: #fbfbfd;
+    border: 1px solid #75757550;
+    box-shadow: 0 3px 6px 0 rgba(185, 185, 185, .4),0 2px 10px 0 rgba(185, 185, 185,0.16);
+    border-radius: 5px;
+    padding: .2rem 0; 
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.single-option {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+    padding: .8rem 0;
+    font-size: 1.6rem;
+}
+
+.single-option:hover {
+    background-color: #FFCE00;
+    color: white;
+    cursor: pointer;
+}
+
+.selected-option {
+    background-color: #FFCE00;
+    color: white;
+}
+

@@ -14,36 +14,35 @@ const LikeLocation = (props) => {
   const { t } = useTranslation();
 
   const favorites = useSelector((state) => state.app.favorites);
+  const selectedPlace = useSelector((state) => state.app.selectedPlace);
   const [liked, setLiked] = useState(false);
 
   // check if this place is a favorite
   useEffect(() => {
     if (favorites) {
-      const isFavoritePlace = favorites.find((place) => place.id === props.id);
+      const isFavoritePlace = favorites.find(
+        (place) => place.id === selectedPlace.id
+      );
       if (isFavoritePlace) {
         setLiked(true);
       }
     }
-  }, [favorites]);
+  }, [selectedPlace.id, favorites]);
 
   const handleToggleLike = () => {
     if (liked) {
-      dispatch({ type: actionTypes.RMV_FAVORITE, val: props.id });
+      dispatch({ type: actionTypes.RMV_FAVORITE });
     } else {
       dispatch({
         type: actionTypes.SET_FAVORITE,
-        val: {
-          id: props.id,
-          locationName: props.locationName,
-          thumbnail: props.thumbnail,
-        },
+        val: props.thumbnail,
       });
     }
     setLiked(!liked);
-    toast(!liked ? t("home.likeBtn.likedText") : t("home.likeBtn.unLikedText"));
+    toast.success(
+      !liked ? t("home.likeBtn.likedText") : t("home.likeBtn.unLikedText")
+    );
   };
-
-  console.log(favorites);
 
   let star = starOutline;
   if (liked) {

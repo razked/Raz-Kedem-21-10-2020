@@ -12,8 +12,8 @@ i18n
         translations: {
           header: {
             appName: "Weather App",
-            celciusAlert: "You've switched to Celcius mode",
-            FarenheitAlert: "You've switched to Farenheit mode",
+            celciusAlert: "Celcius mode enabled",
+            FarenheitAlert: "Farenheit mode enabled",
             nav: {
               home: 'Home',
               favorites: 'Favorites'
@@ -21,13 +21,24 @@ i18n
           },
           home: {
             likeBtn: {
-              likedText: "You've added this location to your favorites",
-              unLikedText: "You've remove this location from favorites",
+              likedText: "Location added to favorites",
+              unLikedText: "Location removed from favorites",
+            },
+            searchBox: {
+              placeholder: 'Type any location..'
             }
           },
           favorites: {
             title: 'My Favorite Places',
             noPlaces: "You don't have favorite places.. yes:)"
+          },
+          errors: {
+            placeTempture: 'Unable to fetch',
+            placeTempture2: 'current weather',
+            search: 'Unable to get search results, try again later',
+            placeIdCall: 'Unable to get weather deails, try again later',
+            forcast: 'Unable to fetch forcast for this location',
+            image: 'Unbale to fetch pictrue for this location'
           }
         },
       },
