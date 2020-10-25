@@ -168,27 +168,29 @@ const SearchBox = (props) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [searchVal, setSearchVal] = useState("");
-  const [results, setResults] = useState([]);
+  // const [results, setResults] = useState([]);
+  const [results, setResults] = useState(TEMP);
   const [selectOpen, setSelectOpen] = useState(false);
 
   const handleChange = (e) => {
     setSearchVal(e.target.value);
-    if (searchVal.length > 1) {
-    //   getPlacesByQuery();
-    }
+    console.log(searchVal)
+      getPlacesByQuery();
   };
 
   const getPlacesByQuery = () => {
+    if(searchVal.length < 2) {
+      return false
+    }
     setSelectOpen(true);
-    console.log("im called");
-    let url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchVal}`;
+    // let url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchVal}`;
 
-    axios.get(url).then((res) => {
-      setResults(res.data);
-    })
-    .catch((error) => {
-      toast.error(`${t('errors.search')}`);
-    });
+    // axios.get(url).then((res) => {
+    //   setResults(res.data);
+    // })
+    // .catch((error) => {
+    //   toast.error(`${t('errors.search')}`);
+    // });
   };
 
   const handleSelectedLoaction = (item) => {
@@ -211,6 +213,7 @@ const SearchBox = (props) => {
         placeholder={t("home.searchBox.placeholder")}
         value={searchVal}
         onChange={handleChange}
+        onBlur={() => setSelectOpen(false)}
       />
 
       {selectOpen && (

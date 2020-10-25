@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { CSSTransition } from "react-transition-group";
+import Fade from "react-reveal/Fade";
 
 import NavLinks from "./NavLinks";
 
@@ -27,44 +27,17 @@ const Drawer = styled.aside`
   @media (min-width: 900px) {
     display: none;
   }
-
-  .slide-in-left-enter {
-    transform: translateX(-100%);
-  }
-
-  .slide-in-left-enter-active {
-    transform: translateX(0);
-    opacity: 1;
-    transition: all 200ms;
-  }
-
-  .slide-in-left-exit {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-
-  .slide-in-left-exit-active {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: all 200ms;
-  }
 `;
 
 const SideDrawer = (props) => {
   return (
-    <CSSTransition
-      in={props.show}
-      timeout={200}
-      classNames="slide-in-left"
-      mountOnEnter
-      unmountOnExit
-    >
-      <Wrapper onClick={props.onClick}>
+    <Wrapper onClick={props.onClick}>
+      <Fade left duration={500}>
         <Drawer onClick={(e) => e.stopPropagation()}>
           <NavLinks onClick={props.onClick} />
         </Drawer>
-      </Wrapper>
-    </CSSTransition>
+      </Fade>
+    </Wrapper>
   );
 };
 

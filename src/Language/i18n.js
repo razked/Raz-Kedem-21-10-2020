@@ -30,7 +30,7 @@ i18n
           },
           favorites: {
             title: 'My Favorite Places',
-            noPlaces: "You don't have favorite places.. yes:)"
+            noPlaces: "You don't have favorite places.. yet :)"
           },
           errors: {
             placeTempture: 'Unable to fetch',

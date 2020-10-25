@@ -28,18 +28,32 @@ const App = () => {
   const ThemeLight = useSelector((state) => state.app.themeLight);
   const selectedPlace = useSelector((state) => state.app.selectedPlace);
 
+  // set or get user favorites from local storage
+  useEffect(() => {
+    let localFavorites = localStorage.getItem("favorites");
+
+    if (localFavorites) {
+      let storedFavorites = JSON.parse(localFavorites);
+      dispatch({
+        type: actionTypes.SET_FAVORITES_FROM_STORGE,
+        val: storedFavorites,
+      });
+    } else {
+      let favoritesArr = [];
+      localStorage.setItem("favorites", JSON.stringify(favoritesArr));
+    }
+  });
+
   // get user geolocation if available
   useEffect(() => {
-    if (!selectedPlace) {
-      let userCoordinates = handleGeoPermission();
+    let userCoordinates = handleGeoPermission();
+    console.log("coord", userCoordinates);
 
-      if (userCoordinates.length > 0) {
-        getWeatherByUserLocation(userCoordinates);
-      }
+    if (userCoordinates.length > 0) {
+      getWeatherByUserLocation(userCoordinates);
     }
   }, [selectedPlace]);
 
-  
   const getWeatherByUserLocation = (cordinates) => {
     // let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${cordinates[0],cordinates[1]}&toplevel=true`;
     // axios.get(url).then((res) => {

@@ -13,7 +13,6 @@ const CityBox = (props) => {
   const celciusType = useSelector((state) => state.app.celcius);
   const selectedPlace = useSelector((state) => state.app.selectedPlace);
 
-  // let iconSrc = `https://developer.accuweather.com/sites/default/files/${WeatherIcon}-s.png`;
   let tempature = celciusType ? celcius : farenheit;
   let tempatureType = celciusType ? "c" : "f";
 
@@ -30,10 +29,6 @@ const CityBox = (props) => {
         <span className="temp-number">{tempature}</span>
         <span className="temp-type">{tempatureType}</span>
       </div>
-
-      {/* <div className="icon">
-        <img src={iconSrc} alt="icon" />
-      </div> */}
 
       <div className="weather-text">{WeatherText}</div>
     </div>

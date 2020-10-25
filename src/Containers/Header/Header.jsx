@@ -63,15 +63,15 @@ const Header = () => {
   return (
     <React.Fragment>
       {drawerToggle && (
-        <SideDrawer
-          show={drawerToggle}
-          onClick={() => setDrawerToggle(!drawerToggle)}
-        />
+        <SideDrawer onClick={() => setDrawerToggle(!drawerToggle)} />
       )}
 
       <HeaderDiv>
         <WrapperDiv>
-          <Hamburger onClick={() => setDrawerToggle(!drawerToggle)} active={drawerToggle}/>
+          <Hamburger
+            onClick={() => setDrawerToggle(!drawerToggle)}
+            active={drawerToggle}
+          />
           <AppTitle>
             <Link to="/">{t("header.appName")}</Link>
           </AppTitle>
@@ -86,7 +86,7 @@ const Header = () => {
             <ThemeToggleBtn />
             <TempatureToggle />
           </WrapperActionBtns>
-        </WrapperDiv>
+        </WrapperDiv> 
       </HeaderDiv>
     </React.Fragment>
   );

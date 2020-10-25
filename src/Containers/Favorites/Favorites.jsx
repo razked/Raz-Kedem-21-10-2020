@@ -18,7 +18,7 @@ const Title = styled.span`
 const NoPlaces = styled.span`
   color: ${({ theme }) => theme.text};
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 const Favorites = () => {

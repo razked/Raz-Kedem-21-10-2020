@@ -3,10 +3,23 @@ import styled from "styled-components";
 
 import "./Select.scss";
 
+// styled
+const OptionSelect = styled.div`
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  z-index: 98;
+
+  .option-select-main {
+    background-color: ${({ theme }) => theme.body};
+  }
+`;
+
 const Select = (props) => {
-    console.log(props);
+  console.log(props);
   return (
-    <div className="option-select">
+    <OptionSelect>
       <div className="option-select-main">
         {props.data.map((item, idx) => (
           <div
@@ -16,12 +29,12 @@ const Select = (props) => {
               props.selected(item);
             }}
           >
-            {item.LocalizedName}
-            {item.Country.LocalizedName}
+            <span>{item.LocalizedName},</span>
+            <span>{item.Country.LocalizedName}</span>
           </div>
         ))}
       </div>
-    </div>
+    </OptionSelect>
   );
 };
 

@@ -20,6 +20,7 @@ export const handleGeoPermission = () => {
            userLocation = null;
         }
       });
+      // console.log(userLocation);
 
       return userLocation;
   }

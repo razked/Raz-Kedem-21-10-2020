@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import Slide from "react-reveal/Slide";
 
 // components
 import CityBox from "../../Components/Home/CityBox/CityBox";
@@ -14,6 +15,9 @@ import Loader from "../../Components/UI/Loader/Loader";
 // style
 import "./Home.scss";
 
+// fall back location image
+import worldPic from "../../images/world.jpg";
+
 const Home = () => {
   const { t } = useTranslation();
   const selectedPlace = useSelector((state) => state.app.selectedPlace);
@@ -21,7 +25,6 @@ const Home = () => {
 
   const [locationDisplayed, setLocationDisplayed] = useState({
     WeatherText: "",
-    // WeatherIcon: 0,
     celcius: 0,
     farenheit: 0,
   });
@@ -45,7 +48,6 @@ const Home = () => {
         let data = res.data[0];
         let temp = { ...locationDisplayed };
         temp.WeatherText = data.WeatherText;
-        // temp.WeatherIcon = data.WeatherIcon;
         temp.celcius = data.Temperature.Metric.Value;
         temp.farenheit = data.Temperature.Imperial.Value;
         setLocationDisplayed(temp);
@@ -83,7 +85,6 @@ const Home = () => {
   const getLocationImages = () => {
     let query = selectedPlace.city;
     let url = process.env.REACT_APP_UNSPLASH_API_URL + query;
-    console.log(url);
 
     axios
       .get(url)
@@ -95,7 +96,10 @@ const Home = () => {
           temp.thumb = data.thumb;
           setPictures(temp);
         } else {
-          alert("no pic");
+          let temp = { ...pictures };
+          temp.cover = worldPic;
+          temp.thumb = worldPic;
+          setPictures(temp);
         }
       })
       .catch((error) => {
@@ -119,16 +123,18 @@ const Home = () => {
       {renderLoader()}
 
       {!loading && (
-        <div
-          className="location-wrapper"
-          style={{ backgroundImage: `url(${pictures.cover})` }}
-        >
-          <CityBox data={locationDisplayed} />
+        <Slide left>
+          <div
+            className="location-wrapper"
+            style={{ backgroundImage: `url(${pictures.cover})` }}
+          >
+            <CityBox data={locationDisplayed} />
 
-          <Forcast data={forcast} />
+            <Forcast data={forcast} />
 
-          <LikeLocation thumbnail={pictures.thumb} />
-        </div>
+            <LikeLocation thumbnail={pictures.thumb} />
+          </div>
+        </Slide>
       )}
     </div>
   );

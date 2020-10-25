@@ -27,17 +27,22 @@ const reducer = (state = initialState, action) => {
         (place) => place.id !== newState.selectedPlace.id
       );
       newState.favorites = newFavorites;
+      localStorage.setItem('favorites', JSON.stringify(newState.favorites));
       return newState;
 
     case actionTypes.SET_FAVORITE:
       let thumbnail = action.val;
       let newFavorite = { ...newState.selectedPlace, thumbnail };
       newState.favorites.push(newFavorite);
+      localStorage.setItem('favorites', JSON.stringify(newState.favorites));
       return newState;
 
     case actionTypes.SET_SELECTED_PLACE:
       newState.selectedPlace = action.val;
-      console.log(newState);
+      return newState;
+
+    case actionTypes.SET_FAVORITES_FROM_STORGE:
+      newState.favorites = action.val;
       return newState;
 
     default:
