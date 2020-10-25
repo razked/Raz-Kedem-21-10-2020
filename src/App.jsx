@@ -65,7 +65,7 @@ const App = () => {
   }, []);
 
   const getWeatherByUserLocation = (cordinates) => {
-    let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${cordinates[0]},${cordinates[1]}&toplevel=true`;
+    let url = `https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${cordinates[0]},${cordinates[1]}&toplevel=true`;
     axios
       .get(url)
       .then((res) => {
@@ -86,7 +86,7 @@ const App = () => {
     <div className="App">
       <ThemeProvider theme={ThemeLight ? lightTheme : darkTheme}>
         <GlobalStyles />
-        <Router>
+        <Router basename={process.env.REACT_APP_PUBLIC_URL}>
           <Header />
 
           <Switch>

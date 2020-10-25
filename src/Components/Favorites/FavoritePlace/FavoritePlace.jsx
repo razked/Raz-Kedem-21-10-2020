@@ -46,7 +46,7 @@ const FavoritePlace = (props) => {
   }, [props.id]);
 
   const getWeatherByPlaceId = () => {
-    let url = `http://dataservice.accuweather.com/currentconditions/v1/${id}?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&details=false`;
+    let url = `https://dataservice.accuweather.com/currentconditions/v1/${id}?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&details=false`;
     axios.get(url).then((res) => {
       let temp = { ...weather };
       temp.celcius = res.data[0].Temperature.Metric.Value;

@@ -29,7 +29,7 @@ const SearchBox = (props) => {
       return false
     }
     setSelectOpen(true);
-    let url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchVal}`;
+    let url = `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchVal}`;
 
     axios.get(url).then((res) => {
       setResults(res.data);

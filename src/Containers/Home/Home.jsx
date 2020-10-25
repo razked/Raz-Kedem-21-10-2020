@@ -43,7 +43,7 @@ const Home = () => {
   }, [selectedPlace.id]);
 
   const getWeatherById = (id) => {
-    let url = `http://dataservice.accuweather.com/currentconditions/v1/${id}?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&details=false`;
+    let url = `https://dataservice.accuweather.com/currentconditions/v1/${id}?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&details=false`;
     axios
       .get(url)
       .then((res) => {
@@ -63,7 +63,7 @@ const Home = () => {
   };
 
   const getForcastWeather = (id) => {
-    let url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=${process.env.REACT_APP_WEATHER_API_KEY}`;
+    let url = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=${process.env.REACT_APP_WEATHER_API_KEY}`;
     axios
       .get(url)
       .then((res) => {
