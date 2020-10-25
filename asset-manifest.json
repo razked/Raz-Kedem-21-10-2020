@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/Raz-Kedem-21-10-2020/static/css/main.63f8ad93.chunk.css",
-    "main.js": "/Raz-Kedem-21-10-2020/static/js/main.f5020399.chunk.js",
-    "main.js.map": "/Raz-Kedem-21-10-2020/static/js/main.f5020399.chunk.js.map",
+    "main.js": "/Raz-Kedem-21-10-2020/static/js/main.56939a9a.chunk.js",
+    "main.js.map": "/Raz-Kedem-21-10-2020/static/js/main.56939a9a.chunk.js.map",
     "runtime-main.js": "/Raz-Kedem-21-10-2020/static/js/runtime-main.2c578467.js",
     "runtime-main.js.map": "/Raz-Kedem-21-10-2020/static/js/runtime-main.2c578467.js.map",
     "static/css/2.d34346ea.chunk.css": "/Raz-Kedem-21-10-2020/static/css/2.d34346ea.chunk.css",
-    "static/js/2.61b0b26a.chunk.js": "/Raz-Kedem-21-10-2020/static/js/2.61b0b26a.chunk.js",
-    "static/js/2.61b0b26a.chunk.js.map": "/Raz-Kedem-21-10-2020/static/js/2.61b0b26a.chunk.js.map",
+    "static/js/2.550e50ff.chunk.js": "/Raz-Kedem-21-10-2020/static/js/2.550e50ff.chunk.js",
+    "static/js/2.550e50ff.chunk.js.map": "/Raz-Kedem-21-10-2020/static/js/2.550e50ff.chunk.js.map",
     "index.html": "/Raz-Kedem-21-10-2020/index.html",
-    "precache-manifest.a5318655da44df68398014b9f82f88eb.js": "/Raz-Kedem-21-10-2020/precache-manifest.a5318655da44df68398014b9f82f88eb.js",
+    "precache-manifest.bec8a5abd42f20a26df8ee37cf2a0839.js": "/Raz-Kedem-21-10-2020/precache-manifest.bec8a5abd42f20a26df8ee37cf2a0839.js",
     "service-worker.js": "/Raz-Kedem-21-10-2020/service-worker.js",
     "static/css/2.d34346ea.chunk.css.map": "/Raz-Kedem-21-10-2020/static/css/2.d34346ea.chunk.css.map",
     "static/css/main.63f8ad93.chunk.css.map": "/Raz-Kedem-21-10-2020/static/css/main.63f8ad93.chunk.css.map",
-    "static/js/2.61b0b26a.chunk.js.LICENSE.txt": "/Raz-Kedem-21-10-2020/static/js/2.61b0b26a.chunk.js.LICENSE.txt",
+    "static/js/2.550e50ff.chunk.js.LICENSE.txt": "/Raz-Kedem-21-10-2020/static/js/2.550e50ff.chunk.js.LICENSE.txt",
     "static/media/bulb-off.svg": "/Raz-Kedem-21-10-2020/static/media/bulb-off.3ae74656.svg",
     "static/media/bulb-on.svg": "/Raz-Kedem-21-10-2020/static/media/bulb-on.09aced8f.svg",
     "static/media/star-full.svg": "/Raz-Kedem-21-10-2020/static/media/star-full.9bec326a.svg",
@@ -25,8 +25,8 @@
   "entrypoints": [
     "static/js/runtime-main.2c578467.js",
     "static/css/2.d34346ea.chunk.css",
-    "static/js/2.61b0b26a.chunk.js",
+    "static/js/2.550e50ff.chunk.js",
     "static/css/main.63f8ad93.chunk.css",
-    "static/js/main.f5020399.chunk.js"
+    "static/js/main.56939a9a.chunk.js"
   ]
 }
