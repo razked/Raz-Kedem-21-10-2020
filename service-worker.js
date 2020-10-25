@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Raz-Kedem-21-10-2020/precache-manifest.bec8a5abd42f20a26df8ee37cf2a0839.js"
+  "/Raz-Kedem-21-10-2020/precache-manifest.0f2e0042952fec9edcb01094edc1767b.js"
 );
 
 self.addEventListener('message', (event) => {
