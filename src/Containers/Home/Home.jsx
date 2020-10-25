@@ -88,6 +88,12 @@ const Home = () => {
     let query = selectedPlace.city;
     let url = process.env.REACT_APP_UNSPLASH_API_URL + query;
 
+    // set pictures to empty string before call to evoid image flicker
+      let temp = { ...pictures };
+      temp.cover = "";
+      temp.thumb = "";
+      setPictures(temp);
+
     axios
       .get(url)
       .then((res) => {
