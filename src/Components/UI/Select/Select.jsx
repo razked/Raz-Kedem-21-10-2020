@@ -17,7 +17,6 @@ const OptionSelect = styled.div`
 `;
 
 const Select = (props) => {
-  console.log(props);
   return (
     <OptionSelect>
       <div className="option-select-main">

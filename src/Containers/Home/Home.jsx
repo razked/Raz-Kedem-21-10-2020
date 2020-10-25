@@ -37,7 +37,9 @@ const Home = () => {
   // get weather on load
   useEffect(() => {
     setLoading(true);
-    getWeatherById(selectedPlace.id);
+    if (selectedPlace.id) {
+      getWeatherById(selectedPlace.id);
+    }
   }, [selectedPlace.id]);
 
   const getWeatherById = (id) => {

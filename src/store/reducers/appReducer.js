@@ -5,9 +5,9 @@ const initialState = {
   celcius: true,
   themeLight: false,
   selectedPlace: {
-    id: "215854",
-    city: "Tel Aviv",
-    country: "Israel",
+    id: null,
+    city: null,
+    country: null,
   },
 };
 
