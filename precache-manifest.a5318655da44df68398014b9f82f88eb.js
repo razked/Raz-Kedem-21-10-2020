@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e49118300699004da1b2294d68cfcfd7",
+    "revision": "309c9eff376eb4af0feb90f72cfbb3e9",
     "url": "/Raz-Kedem-21-10-2020/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Raz-Kedem-21-10-2020/static/css/2.d34346ea.chunk.css"
   },
   {
-    "revision": "e49e1be5427c1d4f622c",
+    "revision": "d48c6f9158eb0a09c274",
     "url": "/Raz-Kedem-21-10-2020/static/css/main.63f8ad93.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Raz-Kedem-21-10-2020/static/js/2.61b0b26a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e49e1be5427c1d4f622c",
-    "url": "/Raz-Kedem-21-10-2020/static/js/main.9f7e12c4.chunk.js"
+    "revision": "d48c6f9158eb0a09c274",
+    "url": "/Raz-Kedem-21-10-2020/static/js/main.f5020399.chunk.js"
   },
   {
     "revision": "6ef9ac02a33605a96b61",

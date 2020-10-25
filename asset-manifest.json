@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Raz-Kedem-21-10-2020/static/css/main.63f8ad93.chunk.css",
-    "main.js": "/Raz-Kedem-21-10-2020/static/js/main.9f7e12c4.chunk.js",
-    "main.js.map": "/Raz-Kedem-21-10-2020/static/js/main.9f7e12c4.chunk.js.map",
+    "main.js": "/Raz-Kedem-21-10-2020/static/js/main.f5020399.chunk.js",
+    "main.js.map": "/Raz-Kedem-21-10-2020/static/js/main.f5020399.chunk.js.map",
     "runtime-main.js": "/Raz-Kedem-21-10-2020/static/js/runtime-main.2c578467.js",
     "runtime-main.js.map": "/Raz-Kedem-21-10-2020/static/js/runtime-main.2c578467.js.map",
     "static/css/2.d34346ea.chunk.css": "/Raz-Kedem-21-10-2020/static/css/2.d34346ea.chunk.css",
     "static/js/2.61b0b26a.chunk.js": "/Raz-Kedem-21-10-2020/static/js/2.61b0b26a.chunk.js",
     "static/js/2.61b0b26a.chunk.js.map": "/Raz-Kedem-21-10-2020/static/js/2.61b0b26a.chunk.js.map",
     "index.html": "/Raz-Kedem-21-10-2020/index.html",
-    "precache-manifest.d4185b3b1c05237de2ffed4bcaf5ee23.js": "/Raz-Kedem-21-10-2020/precache-manifest.d4185b3b1c05237de2ffed4bcaf5ee23.js",
+    "precache-manifest.a5318655da44df68398014b9f82f88eb.js": "/Raz-Kedem-21-10-2020/precache-manifest.a5318655da44df68398014b9f82f88eb.js",
     "service-worker.js": "/Raz-Kedem-21-10-2020/service-worker.js",
     "static/css/2.d34346ea.chunk.css.map": "/Raz-Kedem-21-10-2020/static/css/2.d34346ea.chunk.css.map",
     "static/css/main.63f8ad93.chunk.css.map": "/Raz-Kedem-21-10-2020/static/css/main.63f8ad93.chunk.css.map",
@@ -27,6 +27,6 @@
     "static/css/2.d34346ea.chunk.css",
     "static/js/2.61b0b26a.chunk.js",
     "static/css/main.63f8ad93.chunk.css",
-    "static/js/main.9f7e12c4.chunk.js"
+    "static/js/main.f5020399.chunk.js"
   ]
 }
