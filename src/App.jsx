@@ -87,6 +87,7 @@ const App = () => {
       <ThemeProvider theme={ThemeLight ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Router basename={process.env.REACT_APP_PUBLIC_URL}>
+        {/* <Router> */} 
           <Header />
 
           <Switch>
