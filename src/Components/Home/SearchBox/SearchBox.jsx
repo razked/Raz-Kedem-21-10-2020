@@ -168,8 +168,8 @@ const SearchBox = (props) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [searchVal, setSearchVal] = useState("");
-  // const [results, setResults] = useState([]);
-  const [results, setResults] = useState(TEMP);
+  const [results, setResults] = useState([]);
+  // const [results, setResults] = useState(TEMP);
   const [selectOpen, setSelectOpen] = useState(false);
 
   const handleChange = (e) => {
@@ -183,14 +183,14 @@ const SearchBox = (props) => {
       return false
     }
     setSelectOpen(true);
-    // let url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchVal}`;
+    let url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchVal}`;
 
-    // axios.get(url).then((res) => {
-    //   setResults(res.data);
-    // })
-    // .catch((error) => {
-    //   toast.error(`${t('errors.search')}`);
-    // });
+    axios.get(url).then((res) => {
+      setResults(res.data);
+    })
+    .catch((error) => {
+      toast.error(`${t('errors.search')}`);
+    });
   };
 
   const handleSelectedLoaction = (item) => {

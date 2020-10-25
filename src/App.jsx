@@ -9,10 +9,9 @@ import {
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./Components/Styles/GlobalStyles";
 import { lightTheme, darkTheme } from "./Components/Styles/Themes";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 
-import { handleGeoPermission } from "./helper/userGeoLocation";
 import * as actionTypes from "./store/actions";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -46,22 +45,31 @@ const App = () => {
 
   // get user geolocation if available
   useEffect(() => {
-    let userCoordinates = handleGeoPermission();
-    console.log("coord", userCoordinates);
-
-    if (userCoordinates.length > 0) {
-      getWeatherByUserLocation(userCoordinates);
+    let userCoordinates = [];
+    if (window.navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude;
+        let lng = position.coords.longitude;
+        userCoordinates.push(lat, lng);
+        getWeatherByUserLocation(userCoordinates);
+      });
     }
-  }, [selectedPlace]);
+  },[]);
 
   const getWeatherByUserLocation = (cordinates) => {
-    // let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${cordinates[0],cordinates[1]}&toplevel=true`;
-    // axios.get(url).then((res) => {
-    // let id = res.data[0].Key;
-    // let city = res.data[0].EnglishName;
-    // let country = res.data[0].Country.EnglishName;
-    // dispatch({ type: actionTypes.SET_SELECTED_PLACE, val: {id, city, country} });
-    // });
+    let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&q=${cordinates[0]},${cordinates[1]}&toplevel=true`;
+    axios.get(url).then((res) => {
+      let id = res.data.Key;
+      let city = res.data.EnglishName;
+      let country = res.data.Country.EnglishName;
+      dispatch({
+        type: actionTypes.SET_SELECTED_PLACE,
+        val: { id, city, country },
+      });
+    })
+    .catch((error) => {
+      toast.error(`Can't fetch weather by user location`);
+    });
   };
 
   return (
